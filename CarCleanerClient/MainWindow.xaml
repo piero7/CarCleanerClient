@@ -29,7 +29,7 @@
                    AutoGenerateColumns="False"
                    SelectionMode="Extended"
                    SelectionUnit="FullRow"
-                   x:Name="ttt"
+                   x:Name="111"
                    CanUserAddRows="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="a" 
