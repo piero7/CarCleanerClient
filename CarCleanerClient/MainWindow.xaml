@@ -25,20 +25,5 @@
             <TabItem Header="订单" Padding="15,0,0,0"></TabItem>
             <TabItem Header="统计" Padding="15,0,0,0"></TabItem>
         </Controls:MetroTabControl>
-        <DataGrid  ItemsSource="{Binding Test}"
-                   AutoGenerateColumns="False"
-                   SelectionMode="Extended"
-                   SelectionUnit="FullRow"
-                   x:Name="1131"
-                   CanUserAddRows="True">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="a" 
-                                    Binding="{Binding Name}"></DataGridTextColumn>
-                <DataGridTextColumn Header="b"
-                                    Binding="{Binding PhoneNumber}"></DataGridTextColumn>
-                
-            </DataGrid.Columns>
-        </DataGrid>
-        
     </Grid>
 </Controls:MetroWindow>

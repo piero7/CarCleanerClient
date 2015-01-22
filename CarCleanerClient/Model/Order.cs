@@ -18,6 +18,7 @@ namespace CarCleanerClient.Model
 
         public OrderType OrderType { get; set; }
 
+        public string Remarks { get; set; }
 
     }
     class OrderType
