@@ -1,10 +1,11 @@
-﻿<Controls:MetroWindow x:Class="CarCleanerClient.MainWindow"
+﻿ <Controls:MetroWindow x:Class="CarCleanerClient.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ignore="http://www.ignore.com"
+        xmlns:local ="clr-namespace:CarCleanerClient.View"
         mc:Ignorable="d ignore"
         Height="600"
         Width="600"
@@ -20,25 +21,15 @@
     </Window.Resources>
 
     <Grid x:Name="LayoutRoot">
+        
         <Controls:MetroTabControl >
-            <TabItem Header="小区" Padding="15,0,0,0"></TabItem>
+            <TabItem Header="用户" Padding="15,0,0,0">
+                <local:UserView ></local:UserView>
+            </TabItem>
             <TabItem Header="订单" Padding="15,0,0,0"></TabItem>
+            <TabItem Header="小区" Padding="15,0,0,0"></TabItem>
             <TabItem Header="统计" Padding="15,0,0,0"></TabItem>
         </Controls:MetroTabControl>
-        <DataGrid  ItemsSource="{Binding Test}"
-                   AutoGenerateColumns="False"
-                   SelectionMode="Extended"
-                   SelectionUnit="FullRow"
-                   x:Name="1131"
-                   CanUserAddRows="True">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="a" 
-                                    Binding="{Binding Name}"></DataGridTextColumn>
-                <DataGridTextColumn Header="b"
-                                    Binding="{Binding PhoneNumber}"></DataGridTextColumn>
-                
-            </DataGrid.Columns>
-        </DataGrid>
-        
+
     </Grid>
 </Controls:MetroWindow>

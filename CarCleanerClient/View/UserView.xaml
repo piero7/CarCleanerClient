@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="CarCleanerClient.View.UserView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ignore="http://www.ignore.com"
+             xmlns:local ="clr-namespace:CarCleanerClient.View"
+             mc:Ignorable="d ignore"
+             DataContext="{Binding User, Source={StaticResource Locator}}"
+             >
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row=" 0" HorizontalAlignment="Left">
+            <Button Margin="5,5,5,5" 
+                Width="100" Height="30" Content="订单记录" Command="{Binding GetOrders , ConverterParameter= dataGrid.Selected}"></Button>
+        </StackPanel>
+        <DataGrid
+            Grid.Row="1"
+            ItemsSource="{Binding UserList}"
+            AutoGenerateColumns="False"
+            SelectionMode="Extended"
+            SelectionUnit="FullRow"
+            CanUserAddRows="False"
+            x:Name="dataGrid">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="姓名" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="联系方式" Binding="{Binding PhoneNumber}"/>
+                <DataGridTextColumn Header="小区" Binding="{Binding Community.Name}"/>
+                <DataGridTextColumn Header="车辆" Binding="{Binding CarInfo}"/>
+                <DataGridTextColumn Header="车牌" Binding="{Binding CarNumber}"/>
+                <DataGridTextColumn Header="车辆位置" Binding="{Binding CarLocation}"/>
+            </DataGrid.Columns>
+
+        </DataGrid>
+    </Grid>
+</UserControl>
