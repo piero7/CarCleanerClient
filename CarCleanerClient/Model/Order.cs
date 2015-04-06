@@ -29,6 +29,7 @@ namespace CarCleanerClient.Model
         [ForeignKey("OrderTypeId")]
         public virtual OrderType OrderType { get; set; }
 
+        public string Remarks { get; set; }
 
     }
     public class OrderType
