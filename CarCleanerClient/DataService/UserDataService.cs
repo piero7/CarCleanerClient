@@ -12,7 +12,7 @@ namespace CarCleanerClient.Model
         public List<User> GetData(int skip, int take, Action<List<User>, Exception> callback)
         {
             ModelContext db = new ModelContext();
-            this.UserList = db.UserSet.Include("WechatUser").Skip(skip).Take(take).Where(u => true).ToList();
+            this.UserList = db.UserSet.Include("WeChatAccount").OrderBy(u => u.UserId).Skip(skip).Take(take).Where(u => true).ToList();
 
             //add test data
             AddTestData();

@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace CarCleanerClient.View
 {
     /// <summary>
-    /// UserView.xaml 的交互逻辑
+    /// UserInfoControl.xaml 的交互逻辑
     /// </summary>
-    public partial class UserView : MahApps.Metro.Controls.MetroWindow
-        {
-        public UserView()
+    public partial class UserInfoControl : UserControl
+    {
+        public UserInfoControl()
         {
             InitializeComponent();
         }

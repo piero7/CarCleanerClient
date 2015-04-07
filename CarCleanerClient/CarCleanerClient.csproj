@@ -102,6 +102,10 @@
     <Compile Include="Migrations\201504060958042_addCarInfo2User.Designer.cs">
       <DependentUpon>201504060958042_addCarInfo2User.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201504070721062_atAnji.cs" />
+    <Compile Include="Migrations\201504070721062_atAnji.Designer.cs">
+      <DependentUpon>201504070721062_atAnji.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Community.cs" />
     <Compile Include="DataService\CommunityDataService.cs" />
@@ -113,9 +117,16 @@
     <Compile Include="DataService\UserDataService.cs" />
     <Compile Include="ViewModel\CommunityViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\OrderTypeViewModel.cs" />
     <Compile Include="ViewModel\OrderViewModel.cs" />
     <Compile Include="ViewModel\UserViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="View\OrderView.xaml.cs">
+      <DependentUpon>OrderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserInfoControl.xaml.cs">
+      <DependentUpon>UserInfoControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\UserView.xaml.cs">
       <DependentUpon>UserView.xaml</DependentUpon>
     </Compile>
@@ -138,6 +149,14 @@
     <Page Include="Skins\MainSkin.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\OrderView.xaml">
+      <SubType>Form</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserInfoControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\UserView.xaml">
       <SubType>Designer</SubType>
@@ -166,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201504060958042_addCarInfo2User.resx">
       <DependentUpon>201504060958042_addCarInfo2User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504070721062_atAnji.resx">
+      <DependentUpon>201504070721062_atAnji.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

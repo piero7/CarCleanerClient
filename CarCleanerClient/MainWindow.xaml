@@ -1,4 +1,4 @@
-﻿ <Controls:MetroWindow x:Class="CarCleanerClient.MainWindow"
+﻿<Controls:MetroWindow x:Class="CarCleanerClient.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -21,10 +21,10 @@
     </Window.Resources>
 
     <Grid x:Name="LayoutRoot">
-        
+
         <Controls:MetroTabControl >
             <TabItem Header="用户" Padding="15,0,0,0">
-                <local:UserView ></local:UserView>
+                <local:UserInfoControl ></local:UserInfoControl>
             </TabItem>
             <TabItem Header="订单" Padding="15,0,0,0"></TabItem>
             <TabItem Header="小区" Padding="15,0,0,0"></TabItem>

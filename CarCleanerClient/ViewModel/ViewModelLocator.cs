@@ -40,9 +40,19 @@ namespace CarCleanerClient.ViewModel
 
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<UserViewModel>();
-
+            SimpleIoc.Default.Register<OrderViewModel>();
         }
         #region Locators
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance",
+                   "CA1822:MarkMembersAsStatic",
+                   Justification = "This non-static member is needed for data binding purposes.")]
+        public OrderViewModel Order
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<OrderViewModel>();
+            }
+        }
 
         /// <summary>
         /// Gets the User property.
@@ -69,7 +79,7 @@ namespace CarCleanerClient.ViewModel
             {
                 return ServiceLocator.Current.GetInstance<MainViewModel>();
             }
-        } 
+        }
         #endregion
 
         /// <summary>

@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Messaging;
 using System.Collections.ObjectModel;
 
 namespace CarCleanerClient.ViewModel
@@ -13,10 +14,18 @@ namespace CarCleanerClient.ViewModel
     {
         Model.OrderDataService ds = new Model.OrderDataService();
 
-        public OrderViewModel(Model.User user)
+        public OrderViewModel()
         {
-            this.User = user;
+            Messenger.Default.Register<GenericMessage<Model.User>>(this, "setOrdetUser", msg =>
+            {
+                if (msg.Content == null)
+                {
+                    return;
+                }
+                this.User = msg.Content;
+            });
         }
+
         /// <summary>
         /// The <see cref="User" /> property's name.
         /// </summary>
