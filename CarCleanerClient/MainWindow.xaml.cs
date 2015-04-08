@@ -28,7 +28,19 @@ namespace CarCleanerClient
                         of.ShowDialog();
                     }));
                 }
+            });
+            Messenger.Default.Register<GenericMessage<Model.OrderType>>(this, "getOrders", msg =>
+            {
+                var of = new View.OrderView();
+                if (msg.Content != null)
+                {
 
+                    Messenger.Default.Send<GenericMessage<Model.OrderType>>(new GenericMessage<Model.OrderType>(msg.Content), "setOrderType");
+                    GalaSoft.MvvmLight.Threading.DispatcherHelper.CheckBeginInvokeOnUI(new System.Action(() =>
+                    {
+                        of.ShowDialog();
+                    }));
+                }
             });
         }
     }

@@ -29,6 +29,20 @@ namespace CarCleanerClient.Model
             return this.OrderList;
         }
 
+        public List<Order> GetData(OrderType type, Action<List<Order>, Exception> callback)
+        {
+            var db = new ModelContext();
+            if (type == null)
+            {
+                this.OrderList = null;
+                return null;
+            }
+
+            this.OrderList = new List<Order>(db.OrderSet.Where(o => o.OrderTypeId == type.OrderTypeId));
+            AddTestData();
+            return this.OrderList;
+        }
+
         private void AddTestData()
         {
             this.OrderList.Add(new Order

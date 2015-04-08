@@ -24,6 +24,46 @@ namespace CarCleanerClient.ViewModel
                 }
                 this.User = msg.Content;
             });
+
+            Messenger.Default.Register<GenericMessage<Model.OrderType>>(this, "setOrderType", msg =>
+            {
+                if (msg.Content == null)
+                {
+                    return;
+                }
+                this.Type = msg.Content;
+            });
+        }
+
+        /// <summary>
+        /// The <see cref="Type" /> property's name.
+        /// </summary>
+        public const string TypePropertyName = "Type";
+
+        private Model.OrderType  _type  = new Model.OrderType();
+
+        /// <summary>
+        /// Sets and gets the Type property.
+        /// Changes to that property's value raise the PropertyChanged event. 
+        /// </summary>
+        public Model.OrderType Type
+        {
+            get
+            {
+                return _type;
+            }
+
+            set
+            {
+                if (_type == value)
+                {
+                    return;
+                }
+
+                _type = value;
+                this.OrderList =new ObservableCollection<Model.Order>( this.ds.GetData(Type,null));
+                RaisePropertyChanged(TypePropertyName);
+            }
         }
 
         /// <summary>

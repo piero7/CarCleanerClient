@@ -26,7 +26,9 @@
             <TabItem Header="用户" Padding="15,0,0,0">
                 <local:UserInfoControl ></local:UserInfoControl>
             </TabItem>
-            <TabItem Header="订单" Padding="15,0,0,0"></TabItem>
+            <TabItem Header="订单" Padding="15,0,0,0">
+                <local:OrderTypeControl></local:OrderTypeControl>
+            </TabItem>
             <TabItem Header="小区" Padding="15,0,0,0"></TabItem>
             <TabItem Header="统计" Padding="15,0,0,0"></TabItem>
         </Controls:MetroTabControl>

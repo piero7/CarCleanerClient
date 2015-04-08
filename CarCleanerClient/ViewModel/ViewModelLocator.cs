@@ -41,8 +41,21 @@ namespace CarCleanerClient.ViewModel
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<UserViewModel>();
             SimpleIoc.Default.Register<OrderViewModel>();
+            SimpleIoc.Default.Register<OrderTypeViewModel>();
+
         }
         #region Locators
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance",
+     "CA1822:MarkMembersAsStatic",
+     Justification = "This non-static member is needed for data binding purposes.")]
+        public OrderTypeViewModel OrderType
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<OrderTypeViewModel>();
+            }
+        }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance",
                    "CA1822:MarkMembersAsStatic",
                    Justification = "This non-static member is needed for data binding purposes.")]
